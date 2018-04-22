@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+<body>
+
+
+
+<div id="example">
+  <my-component></my-component>
+</div>
+
+</div>
+<div id="test2">
+
+<my-component></my-component>
+
+</div>
+
+<div id="test3">
+
+<test3-comp></test3-comp>
+
+</div>
+
+
+<script>
+Vue.component('my-component', {
+	  template: '<div>A custom component!</div>'
+	})
+new Vue({
+	  el: '#example'
+	})
+
+
+
+</script>
+
+<script>
+
+var Child = {
+		  template: '<div>A child component!</div>'
+		}
+
+		new Vue({
+		  el:"#test2",
+		  components: {
+		    // <my-component> will only be available in parent's template
+		    'my-component': Child
+		  }
+		})
+
+
+</script>
+
+
+<script>
+
+var Child = {
+		  template: '<span>{{ vm.message }}</span>'
+		}
+
+ 	var vm = new Vue({
+		  el:"#test3",
+		  data: {
+			    message: 'hello'
+			  },
+		  components: {
+		    // <my-component> will only be available in parent's template
+		    'test3-comp': Child
+		  }
+		})
+
+
+
+
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+<body>
+ <div id = "test1">
+         <button v-on:click = "showdata" v-bind:style = "styleobj">Click Me</button>
+         <span style = "font-size:25px;"><b>{{show}}</b></span>
+         <h1 v-if = "show">This is h1 tag</h1>
+         <h2 v-else>This is h2 tag</h2>
+         <div v-show = "show">
+            <b>V-Show:</b>
+            <p>demonstrating v-show()</p>
+         </div>
+      </div>
+</body>
+<script>
+
+
+var vm = new Vue({
+    el: '#test1',
+    data: {
+       show: true,
+       styleobj: {
+          backgroundColor: '#2196F3!important',
+          cursor: 'pointer',
+          padding: '8px 16px',
+          verticalAlign: 'middle',
+       }
+    },
+    methods : {
+       showdata : function() {
+          this.show = !this.show;
+       }
+    },
+ });
+
+
+</script>
+</html>

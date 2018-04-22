@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>ServletCrud</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+<servlet-name>Registration</servlet-name>
+<servlet-class>javaclasses.RegServlet</servlet-class>
+</servlet>
+
+  
+<servlet-mapping>
+<servlet-name>Registration</servlet-name>
+<url-pattern>/reg</url-pattern>
+</servlet-mapping>
+
+
+ <servlet>
+<servlet-name>AddUser</servlet-name>
+<servlet-class>javaclasses.AddUserServlet</servlet-class>
+</servlet>
+
+  
+<servlet-mapping>
+<servlet-name>AddUser</servlet-name>
+<url-pattern>/addUser</url-pattern>
+</servlet-mapping>
+  
+  
+   <servlet>
+<servlet-name>DisplayUser</servlet-name>
+<servlet-class>javaclasses.DisplayUserServlet</servlet-class>
+</servlet>
+
+  
+<servlet-mapping>
+<servlet-name>DisplayUser</servlet-name>
+<url-pattern>/dispUser/*</url-pattern>
+</servlet-mapping>
+
+
+
+
+   <servlet>
+<servlet-name>DeleteUser</servlet-name>
+<servlet-class>javaclasses.DeleteUserServlet</servlet-class>
+</servlet>
+
+  
+<servlet-mapping>
+<servlet-name>DeleteUser</servlet-name>
+<url-pattern>/deleteUser/*</url-pattern>
+</servlet-mapping>
+  
+   <servlet>
+<servlet-name>EditUser</servlet-name>
+<servlet-class>javaclasses.EditUserServlet</servlet-class>
+</servlet>
+
+  
+<servlet-mapping>
+<servlet-name>EditUser</servlet-name>
+<url-pattern>/editUser/*</url-pattern>
+</servlet-mapping>
+
+
+
+   <servlet>
+<servlet-name>EditUserHtml</servlet-name>
+<servlet-class>javaclasses.EditUserHtml</servlet-class>
+</servlet>
+
+  
+<servlet-mapping>
+<servlet-name>EditUserHtml</servlet-name>
+<url-pattern>/update/*</url-pattern>
+</servlet-mapping>
+  
+  
+  
+   <servlet>
+<servlet-name>UpdateUser</servlet-name>
+<servlet-class>javaclasses.UpdateUserServlet</servlet-class>
+</servlet>
+
+  
+<servlet-mapping>
+<servlet-name>UpdateUser</servlet-name>
+<url-pattern>/updateUser</url-pattern>
+</servlet-mapping>
+  
+    <servlet>
+<servlet-name>ViewUser</servlet-name>
+<servlet-class>javaclasses.ViewUserServlet</servlet-class>
+</servlet>
+
+  
+<servlet-mapping>
+<servlet-name>ViewUser</servlet-name>
+<url-pattern>/detailinfo</url-pattern>
+</servlet-mapping>
+
+ <servlet>
+<servlet-name>ViewUserHtml</servlet-name>
+<servlet-class>javaclasses.ViewUserHtml</servlet-class>
+</servlet>
+
+  
+<servlet-mapping>
+<servlet-name>ViewUserHtml</servlet-name>
+<url-pattern>/viewUserHtml/*</url-pattern>
+</servlet-mapping>
+  
+  
+  
+  
+</web-app>

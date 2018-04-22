@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script src="/js/getKey.js"></script>
+</head>
+<body>
+<input type="text" class="key">
+
+<button id="getKey">Key</button>
+
+<p>replacing me</p>
+
+
+
+
+
+
+ 
+
+</body>
+</html>

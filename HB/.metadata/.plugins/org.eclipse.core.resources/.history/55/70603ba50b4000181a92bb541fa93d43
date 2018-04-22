@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+<script src="/js/key.js"></script>
+</head>
+<body ng-app="myapp">
+This is index
+<div ng-controller="piplController">
+<input ng-model = "user.id">
+<button ng-click="getUser(user.id)">Key</button>
+<button>Create</button>
+<button>Delete</button>
+</div>
+
+<script id="some-template" type="text/x-handlebars-template">
+
+
+  <table class="mytable">
+    <thead>
+      <th>name</th>
+      <th>email</th>
+		<th>Delete User</th>
+<th>Edit User</th>
+<th>View User Details</th>
+      
+    </thead>
+    <tbody>
+     {{#each jsonObjects}}
+        <tr class="row">
+          <td >{{id}}</td>
+          <td class="emailData"  >{{email}} </td>
+		<td><button class="delUser">delete</button></td>
+<td><button class="editUser">Edit</button></td>
+<td><button class="viewUser">ViewDetails</button></td>
+         
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</script>
+
+</body>
+</html>

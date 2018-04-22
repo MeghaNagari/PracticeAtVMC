@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+<body>
+	<div id="test">
+
+		<a v-bind:href="url">link</a>
+
+	</div>
+
+
+	<div id="app-5">
+		<p>{{ message }}</p>
+		<button v-on:click="reverseMessage">Reverse Message</button>
+	</div>
+	<div id="demo">{{ fullName}}</div>
+	<h2>this is example watch</h2>
+	<div id="watch-example">
+		<p>
+			Ask a yes/no question: <input v-model="question">
+		</p>
+		<p>{{ answer }}</p>
+	</div>
+
+	<h2>this is object freeze</h2>
+
+	<div id="app">
+		<p>{{ foo }}</p>
+		<!-- this will no longer update `foo`! -->
+		<button @click="foo = 'baz'">Change it</button>
+	</div>
+
+
+	<div id="test3">
+
+	 {{a}}
+
+
+	</div>
+	
+	<div id="test4">
+	
+	
+	<p>Reversed message: "{{ reverseMessage() }}"</p>
+	
+	
+	</div>
+
+
+
+	<script>
+
+var app = new Vue({
+	  el: '#test',
+	  data: {
+	    
+	    url:"http://www.google.com"
+	  }
+	})
+
+
+</script>
+
+
+
+
+
+
+
+	</script>
+
+	<script>
+
+var app5 = new Vue({
+	  el: '#app-5',
+	  data: {
+	    message: 'Hello Vue.js!'
+	  },
+	  methods: {
+	    reverseMessage: function () {
+	      this.message = this.message.split('').reverse().join('')
+	    }
+	  }
+	})
+
+</script>
+
+	<script>
+
+
+
+
+
+var vm = new Vue({
+	  el: '#demo',
+	  data: {
+	    firstName: 'Foo',
+	    lastName: 'Bar'
+	  },
+	  /* computed: {
+	    fullName: function () {
+	      return this.firstName + ' ' + this.lastName
+	    }
+	  }
+	 */
+	
+	computed: {
+		  fullName: {
+		    // getter
+		    get: function () {
+		      return this.firstName + ' ' + this.lastName
+		    },
+		    // setter
+		    set: function (newValue) {
+		      var names = newValue.split(' ')
+		      this.firstName = names[0]
+		      this.lastName = names[names.length - 1]
+		    }
+		  }
+		}
+})
+
+
+	
+
+
+/* var vm = new Vue({
+	  el: '#demo',
+	  data: {
+	    firstName: 'Foo',
+	    lastName: 'Bar',
+	    fullName: 'Foo Bar'
+	  },
+	  watch: {
+	    firstName: function (val) {
+	      this.fullName = val + ' ' + this.lastName
+	    },
+	    lastName: function (val) {
+	      this.fullName = this.firstName + ' ' + val
+	    }
+	  }
+	}) */
+
+
+
+</script>
+
+	
+
+
+
+<!-- Since there is already a rich ecosystem of ajax libraries    -->
+<!-- and collections of general-purpose utility methods, Vue core -->
+<!-- is able to remain small by not reinventing them. This also   -->
+<!-- gives you the freedom to use what you're familiar with. -->
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+	<script>
+var watchExampleVM = new Vue({
+  el: '#watch-example',
+  data: {
+    question: '',
+    answer: 'I cannot give you an answer until you ask a question!'
+  },
+  watch: {
+    // whenever question changes, this function will run
+    question: function (newQuestion, oldQuestion) {
+      this.answer = 'Waiting for you to stop typing...'
+      this.getAnswer()
+    }
+  },
+  methods: {
+    // _.debounce is a function provided by lodash to limit how
+    // often a particularly expensive operation can be run.
+    // In this case, we want to limit how often we access
+    // yesno.wtf/api, waiting until the user has completely
+    // finished typing before making the ajax request. To learn
+    // more about the _.debounce function (and its cousin
+    // _.throttle), visit: https://lodash.com/docs#debounce
+    getAnswer: _.debounce(
+      function () {
+        if (this.question.indexOf('?') === -1) {
+          this.answer = 'Questions usually contain a question mark. ;-)'
+          return
+        }
+        this.answer = 'Thinking...'
+        var vm = this
+        axios.get('https://yesno.wtf/api')
+          .then(function (response) {
+            vm.answer = _.capitalize(response.data.answer)
+          })
+          .catch(function (error) {
+            vm.answer = 'Error! Could not reach the API. ' + error
+          })
+      },
+      // This is the number of milliseconds we wait for the
+      // user to stop typing.
+      500
+    )
+  }
+})
+</script>
+
+
+	<script>
+
+
+var obj = {
+		  foo: 'bar'
+		}
+
+		Object.freeze(obj)
+
+		new Vue({
+		  el: '#app',
+		  data: obj
+		})
+
+</script>
+
+
+	<script>
+
+
+ new Vue({
+	el:"#test3",
+	  data: {
+	    a: 1
+	  },
+	  created: function () {
+	    // `this` points to the vm instance
+	    console.log('a is: ' + this.a)
+	  }
+	})
+
+
+
+</script>
+
+
+</body>
+</html>

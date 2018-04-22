@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+<script src="/js/getKey.js"></script>
+<script src="/js/addKey.js"></script>
+<script src="/js/deleteKey.js"></script>
+<script src="/js/updateKey.js"></script>
+
+</head>
+<script>
+$( document ).ready(function() {
+    $("#sendForm").hide();
+    $("#getKeyForm").hide();
+    
+});
+</script>
+<body>
+<button id="getKey">GetKeyValue</button>
+<button id="addKey">Add</button>
+<button id="delKey">Delete</button>
+<button id="updateKey">Update</button>
+
+<form class="form-horizontal" action='' method="POST" id="sendForm">
+  <fieldset>
+   
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="username">KEY_NAME</label>
+      <div class="controls">
+        <input type="text" id="cacheKey" name="keyName" placeholder="" class="input-xlarge">
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- E-mail -->
+      <label class="control-label" for="method">Method</label>
+      <div class="controls">
+        <input type="text" id="method" name="methodName" placeholder="" class="input-xlarge">
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password-->
+      <label class="control-label" for="expiresin">ExpiresIn</label>
+      <div class="controls">
+        <input type="number" id="expiresIn" name="expiresName" placeholder="" class="input-xlarge">
+      </div>
+    </div>
+    
+    <div class="control-group">
+              <label class="control-label" for="expiresin">RequestPayload</label>
+              <div class="controls">
+        <textarea  placeholder="" id="requestPayload" class="input-xlarge"></textarea></div>
+</div>
+ 
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-success" id="sendFormBtn">ADD</button>
+          </div>
+    </div>
+    
+    
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-success" id="updateSendBtn">UPDATE</button>
+      </div>
+    </div>
+    
+    
+  </fieldset>
+</form>
+
+<form class="form-horizontal" action='' method="POST" id="getKeyForm">
+  <fieldset>
+   
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="username">KEY_NAME</label>
+      <div class="controls">
+        <input type="text" id="cKey" name="keyName" placeholder="" class="input-xlarge">
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- E-mail -->
+      <label class="control-label" for="method">Method</label>
+      <div class="controls">
+        <input type="text" id="mtd" name="methodName" placeholder="" class="input-xlarge">
+      </div>
+    </div>
+<div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-success" id="getKeyBtn">GET</button>
+      </div>
+    </div>
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-success" id="delKeyBtn">DELETE</button>
+      </div>
+    </div>
+    
+  </fieldset>
+</form>
+<p>im changing</p>
+
+<div id="disp">
+</div>
+
+
+
+</body>
+
+
+</html>

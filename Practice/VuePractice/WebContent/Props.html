@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+<body>
+
+<div id="test1">
+<child message="hello!"></child>
+</div>
+</body>
+
+<script>
+
+Vue.component('child', {
+	  // declare the props
+	  props: ['message'],
+	  // like data, the prop can be used inside templates and
+	  // is also made available in the vm as this.message
+	  template: '<span style="color:red">{{ message }}</span>'
+	})
+new Vue({
+	
+el:"#test1",
+components:{
+	
+}
+
+
+})
+</script>
+</html>

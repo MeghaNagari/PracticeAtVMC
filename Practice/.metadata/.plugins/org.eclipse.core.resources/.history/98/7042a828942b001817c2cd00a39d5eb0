@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+<body>
+
+<div class="static"
+     v-bind:class="{ active: isActive, 'text-danger': hasError }">
+     
+     <p> this is style bind{{msg}}</p>
+     
+</div>
+
+
+<input type="text" v-model:"msg">
+</div>
+
+
+</body>
+
+<script>
+new Vue({
+
+	el:".static",
+	data: {
+		  isActive: true,
+		  hasError: false,
+		  msg:"message"
+		}
+
+	
+})
+
+
+
+
+</script>
+</html>

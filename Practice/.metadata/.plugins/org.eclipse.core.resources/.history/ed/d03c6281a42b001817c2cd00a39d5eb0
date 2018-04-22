@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<div id = "test1">
+         <input type = "text" v-on:keyup.enter = "showinputvalue"
+            v-bind:style = "styleobj" placeholder = "Enter Fruits Names"/>
+         <h1 v-if = "items.length>0">Display Fruits Name</h1>
+         <ul>
+            <li v-for = "a in items">{{a}}</li>
+         </ul>
+      </div>
+
+</body>
+<script>
+
+
+
+var vm = new Vue({
+    el: '#test1',
+    data: {
+       items:[],
+       styleobj: {
+          width: "30%",
+          padding: "12px 20px",
+          margin: "8px 0",
+          boxSizing: "border-box"
+       }
+    },
+    methods : {
+       showinputvalue : function(event) {
+          this.items.push(event.target.value);
+       }
+    },
+ });
+
+
+
+
+</script>
+</html>

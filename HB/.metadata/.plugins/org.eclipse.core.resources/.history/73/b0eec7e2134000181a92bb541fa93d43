@@ -1,0 +1,31 @@
+package com.example.demo;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+
+@org.springframework.stereotype.Controller
+public class HomeController {
+ 
+    @RequestMapping(value = "/")
+    public String index() {
+        return "index.html";
+    }
+    
+    @RequestMapping(value = "/users/{id}")
+    @ResponseBody
+    public String index2(@PathVariable(value="id") String id) {
+       System.out.println("======id==="+id);
+        return id;
+      
+      
+    }
+    
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+<body>
+
+
+<div id = "test1">
+         <input type = "text" v-on:keyup.enter = "showinputvalue"
+            v-bind:style = "styleobj" placeholder = "Enter Fruits Names"/>
+         <h1 v-if = "items.length>0">Display Fruits Name</h1>
+         <ul>
+            <li v-for = "a in items">{{a}}</li>
+         </ul>
+      </div>
+      
+      
+      <div id="test2">
+      
+      
+      <ul id="example-2">
+  <li v-for="(item, index) in items">
+    {{ parentMessage }} - {{ index }} - {{ item.message }}
+  </li>
+</ul>
+      
+      
+      
+      
+      </div>
+      
+      <div id="test3">
+      
+      
+      <ul class="demo">
+  <li v-for="value in data">
+    {{ value }}
+  </li>
+</ul>
+      
+      
+      </div>
+
+</body>
+<script>
+
+
+
+var vm = new Vue({
+    el: '#test1',
+    data: {
+       items:[],
+       styleobj: {
+          width: "30%",
+          padding: "12px 20px",
+          margin: "8px 0",
+          boxSizing: "border-box"
+       }
+    },
+    methods : {
+       showinputvalue : function(event) {
+          this.items.push(event.target.value);
+       }
+    },
+ });
+
+
+
+
+</script>
+
+
+
+<script>
+
+
+var example2 = new Vue({
+	  el: '#test2',
+	  data: {
+	    parentMessage: 'Parent',
+	    items: [
+	      { message: 'Foo' },
+	      { message: 'Bar' }
+	    ]
+	  }
+	})
+
+
+
+
+</script>
+
+<script>
+
+new Vue({
+	  el: '#test3',
+	  data: {
+	    object: {
+	      firstName: 'John',
+	      lastName: 'Doe',
+	      age: 30
+	    }
+	  }
+	})
+
+
+
+</script>
+
+
+</html>

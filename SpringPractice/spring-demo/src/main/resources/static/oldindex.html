@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>Home Page</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+	<h1>Hello !</h1>
+	<p>
+		Welcome to Our App</span>
+	</p>
+
+	<div id="reg">
+		<p>this is para</p>
+		
+		<button @click="loginMethod" id="btn">Register Hotel</button>
+		<div v-if="msg">
+			<login-component v-on:event_child="eventChild"></login-component>
+		</div>
+	</div>
+</body>
+<script> 
+var Child = {
+		  template: '<div>Name: <input type="text" v-model="hotel.name"><br>\
+City: <input type="text" v-model="hotel.city"><br>\
+<button v-on:click="emit">Clique me to emit from child component</button></div>',
+data(){
+	return{
+	hotel:{
+		name:"",
+		city:""
+	}}
+},
+methods: {
+	emit: function() {
+		console.log("emitting"+this.hotel.name)
+		this.$emit('event_child',this.hotel)
+	}
+		  
+		 		}
+}
+var vm=new Vue({
+	
+	el:"#reg",
+	components:{
+		'login-component':Child
+	},
+	 data: {
+		   
+		      hotel:{
+		    	  city:"",
+		    	  name:" "
+		      },
+		   
+		  
+	msg:false,
+counter:0
+	},
+		
+	methods:{
+		loginMethod:function()
+		{	
+  		this.counter++;
+  		if((this.counter)%2!=0)
+		
+  		this.msg=true;
+		    			
+		else
+			this.msg=false
+			
+		},
+
+			eventChild: function(hotel) {
+				console.log("hotel name"+hotel.name)
+				console.log('Event from child component emitted', hotel.name+""+hotel.city)
+				
+			}
+	
+		
+		
+	}
+		
+	
+	
+	
+	
+	})
+
+</script>
+
+</html>

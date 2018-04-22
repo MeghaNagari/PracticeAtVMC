@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src =  "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/getKey.js"></script>
+</head>
+<body>
+<input type="text" class="key">
+
+
+<button id="getKey">GetKeyValue</button>
+<button id="delKey">Delete</button>
+
+<p>replacing me</p>
+
+
+
+
+
+
+
+ 
+
+</body>
+</html>

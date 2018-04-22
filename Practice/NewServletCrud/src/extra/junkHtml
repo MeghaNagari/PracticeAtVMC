@@ -1,0 +1,112 @@
+<script>
+
+
+function Remove(button) {
+    //Determine the reference of the Row using the Button.
+    var row = $(button).closest("TR");
+    var name = $("TD", row).eq(0).html();
+    if (confirm("Do you want to delete: " + name)) {
+
+        //Get the reference of the Table.
+        var table = $("#tblCustomers")[0];
+
+        //Delete the Table row using it's Index.
+        table.deleteRow(row[0].rowIndex);
+}
+};
+
+
+</script>
+
+--------------------------------------------------------------------------------------------
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).on("click", "#dispbtn", function() {  // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
+    $.get("dispUser", function(responseJson) {    // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response JSON...
+        var $ul = $("<ul>").appendTo($("#somediv")); // Create HTML <ul> element and append it to HTML DOM element with ID "somediv".
+        $.each(responseJson, function(index, item) { // Iterate over the JSON array.
+            $("<li>").text(item.name).appendTo($ul);      // Create HTML <li> element, set its text content with currently iterated item and append it to the <ul>.
+        });
+    });
+});
+
+
+/* $(document).ready(function() { */
+	/* 
+	$('#dispbtn').click(function() {
+		$.ajax({
+			url : 'GetUserServlet',
+			data : {
+				userName : $('#userName').val()
+			},
+			success : function(responseText) {
+				$('#ajaxGetUserServletResponse').text(responseText);
+			}
+		});
+	}); */
+	
+	
+	
+	
+	
+/* 	$('#dispbtn').click(function() {
+	$.ajax({ 
+	    type: 'GET', 
+	    url: '/display', 
+	    
+	    dataType: 'json',
+	    success: function (data) { 
+	        $.each(data, function(index, element) {
+	            $('body').append($('<div>', {
+	                text: element.name
+	            }));
+	        });
+	    }
+	});
+	 */
+
+/* }); */
+
+
+
+</script>
+</head>
+
+<body>
+<form action="addUser">
+Thank u 4 successfully registering with us!!
+
+
+<input type="submit" value="add new user">
+</form>
+<button id="dispbtn">display user</button>
+<div id="somediv"><ul>
+
+</ul></div>
+
+</body>
+</html> -->
+
+--------------ABOVE 2 TAKEN FROM RegSucc.html----------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+

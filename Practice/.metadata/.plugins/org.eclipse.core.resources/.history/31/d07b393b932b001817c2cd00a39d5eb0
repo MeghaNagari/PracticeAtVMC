@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div class="static"
+     v-bind:class="{ active: isActive, 'text-danger': hasError }">
+</div>
+
+
+</body>
+
+<script>
+new Vue({
+
+	el:".static",
+	data: {
+		  isActive: true,
+		  hasError: false
+		}
+
+	
+})
+
+
+
+
+</script>
+</html>

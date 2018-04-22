@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../static/js/key.js"></script>
+</head>
+<body ng-app="myapp">
+This is index
+<div ng-controller="piplController">
+<button id="key">Key</button>
+<button>Create</button>
+<button>Delete</button>
+</div>
+</body>
+</html>

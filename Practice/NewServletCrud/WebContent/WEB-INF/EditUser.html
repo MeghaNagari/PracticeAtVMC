@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script>
+
+$("#email").bind("change", function(e){
+	  $.getJSON("http://yourwebsite.com/lokup.php?email=" + $("#email").val(),
+	        function(data){
+	          $.each(data, function(i,item){
+	            if (item.field == "first_name") {
+	              $("#first_name").val(item.value);
+	            } else if (item.field == "last_name") {
+	              $("#last_name").val(item.value);
+	            }
+	          });
+	        });
+	});
+
+
+</script>
+<body>
+
+
+<form>
+name
+<input type="text" name="name">
+contact
+<input type="text" name="contact">
+email
+<input type="email" name="email">
+password
+<input type="password" name="pwd">
+
+
+
+
+</form>
+
+
+</body>
+</html>

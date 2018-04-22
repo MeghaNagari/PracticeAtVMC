@@ -1,0 +1,2 @@
+INDEX VERSION 1.129+E:\DataTablesSer\.metadata\.plugins\org.eclipse.jdt.core
+4267854815.index

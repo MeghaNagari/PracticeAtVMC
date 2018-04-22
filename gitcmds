@@ -1,0 +1,2 @@
+git stash save " name"
+git stash pop

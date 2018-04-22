@@ -1,0 +1,30 @@
+$(document).ready(function() {
+		$('#delKey').click(function() {
+
+			alert("delete  keyclicked")
+			var key = $(this).siblings("input.key").val();
+			var request = $.ajax({
+				url : "key",
+				method : "DELETE",
+				data : {
+					"key" : key
+				}
+
+				
+			});
+
+			request.done(function(data) {
+				
+				$("p").text("Value is:"+data);
+			
+
+			});
+
+			request.fail(function(jqXHR, textStatus) {
+				alert("Request failed: " + textStatus);
+			});
+
+		});
+
+	});
+

@@ -1,0 +1,39 @@
+$(document).ready(function() {
+		$('#getKey').click(function() {
+
+			alert("get  keyclicked")
+			var key = $(this).siblings("input.key").val();
+			var request = $.ajax({
+				url : "key",
+				method : "GET",
+				data : {
+					"key" : key
+				}
+
+				
+			});
+
+			request.done(function(data) {
+				
+				$("p").text(data);
+				/*   $( "p" ).text(JSON.stringify(msg,['userId','title'])); */
+
+//				var source = $("#some-template").html();
+//				var template = Handlebars.compile(source);
+//				var users = {
+//					jsonObjects : data
+//				};
+//				$("p").html(template(users));
+				
+			
+
+			});
+
+			request.fail(function(jqXHR, textStatus) {
+				alert("Request failed: " + textStatus);
+			});
+
+		});
+
+	});
+

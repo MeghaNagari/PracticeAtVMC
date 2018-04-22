@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+/home/vipany/Documents/SpringPractice/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+52581375.index
+502373214.index
+1683461831.index
+2914392283.index
+1117977366.index
+1738702124.index
+3411218580.index

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+<script src="/js/key.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="piplController">
+<input ng-model = "user.id">
+
+<button ng-click="getUser(user.id)">Key</button>
+<button>Create</button>
+<p>{{message}}</p>
+<button ng-click="deleteUser(user.id)">Delete</button>
+
+
+<table ng-show="isVisible">
+	      <tr><th>ID </th> <th>Name</th> <th>email</th></tr>
+	      <tr ng-repeat="row in user">
+	         <td><span ng-bind="row.id"></span></td>
+	         <td><span ng-bind="row.name"></span></td>
+	         <td><span ng-bind="row.email"></span></td>
+	         <td>
+		  </tr>	
+	</table>
+
+
+
+
+
+
+ 
+
+</body>
+</html>

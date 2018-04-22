@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+/home/vipany/Documents/Servlets/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1669390284.index
+4027456821.index
+3817938132.index
+881185627.index
+2914392283.index
+3099014042.index
+3187628932.index

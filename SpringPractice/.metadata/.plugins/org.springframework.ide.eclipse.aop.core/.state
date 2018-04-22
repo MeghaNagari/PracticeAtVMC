@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="justiceleague_management_system-master"/>
+<aop-project name="spring-thymeleaf-pagination"/>
+<aop-project name="handlebars"/>
+<aop-project name="spring-demo"/>
+<aop-project name="jwt-spring-security-demo"/>
+<aop-project name="jwt-security-example"/>
+</aop-reference-model>

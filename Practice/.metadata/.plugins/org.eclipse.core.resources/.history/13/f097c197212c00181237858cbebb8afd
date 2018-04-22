@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<child message="hello!"></child>
+</body>
+
+<script>
+
+Vue.component('child', {
+	  // declare the props
+	  props: ['message'],
+	  // like data, the prop can be used inside templates and
+	  // is also made available in the vm as this.message
+	  template: '<span style="color:red">{{ message }}</span>'
+	})
+
+</script>
+</html>
